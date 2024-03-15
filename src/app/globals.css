@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.backGroundImage{
+  background-image: url('../../public/asset/images/loginBackgroundImage.png');
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.lineColor{
+  background: linear-gradient(90deg, #D9D9D9 50%, rgba(217, 217, 217, 0) 80.44%);
+
+}
+.RightlineColor{
+  rotate: -180deg;
+  background: linear-gradient(270deg, #D9D9D9 0%, rgba(217, 217, 217, 0) 100% );
+}
+.LeftlineColor{
+  background: linear-gradient(270deg, #D9D9D9 0%, rgba(217, 217, 217, 0) 100%);
+}
+.boxShadow{
+  box-shadow: rgba(88, 28, 61, 0.64) !important;
+}
+.borderColor{
+border: 2px solid rgba(220, 74, 155, 1);
+}
+.heading{
+  color: rgba(220, 74, 155, 1);
+  font-style: italic;
+
+}
+.heading1{
+  color: white;
+  font-style: italic;
+
+}
+.userBoxcolor{
+  background: linear-gradient(180deg, #DC4A9B -16.32%, rgba(220, 74, 155, 0) 100%);
+
+}
+.userBorder{
+  border: 1.06px solid rgba(220, 74, 155, 1)
+}
+.iconBg{
+  background: rgba(220, 74, 155, 1);
+
+}
+.inputbg{
+  background: rgba(255, 255, 255, 0.34);
+
+}
+.campusBorder{
+  border: 1px dashed rgba(212, 212, 212, 0.22)
+}
+.btn{
+  background: rgba(220, 74, 155, 1);
+  border-radius: 16px;
+}
+.userTable{
+  background: linear-gradient(180deg, #DC4A9B -16.32%, rgba(220, 74, 155, 0) 100%);
+
+}
+.backGround{
+  background: rgba(0, 0, 0, 0.36);
+}
+.profileBg{
+  background: linear-gradient(180deg, #DC4A9B -16.32%, rgba(220, 74, 155, 0) 100%);
+
+}
+.sidebar {
+  transition: width 0.3s ease;
+}
+
+.sidebar-closed {
+  width: 0;
+}
+.box-shadow{
+  box-shadow: 9px 15px 96.30000305175781px 0px rgba(88, 28, 61, 0.64);
+
+}
+.card-shadow{
+  box-shadow: 3.2329964637756348px 5.65774393081665px 24.16664695739746px 0px rgba(220, 74, 155, 0.32);
+}
+
+
+/* This will hide the default range slider appearance */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(270deg, #DC4A9B 30.6%, #FFFFFF 125%);
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+input[type="range"].custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16.2px; 
+  height: 21.15px; 
+  background-image: url('../../public/asset/images/fire.png') !important;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  cursor: pointer; 
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.tremsAndCondition{
+  background: linear-gradient(180deg, #DC4A9B -16.32%, rgba(220, 74, 155, 0) 100%);
+  /* border-radius: 53.11px, 0px, 0px, 94.71px !important; */
+}
+
+.scroll {
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 920px;
+  padding: 10px;
+}
+.heightScroll{
+  overflow-y: hidden;
+  overflow-y: scroll;
+
+}
+.layOutBackGround{
+  background: rgba(23, 23, 23, 1);
+}
+.notificationShadow{
+  box-shadow: 7.071145534515381px 11.785243034362793px 75.66126251220703px 0px rgba(88, 28, 61, 0.64);
+
+}
+.notificationBorder{
+  border: 1.96px solid rgba(190, 49, 127, 1)
+
+}
+
+
