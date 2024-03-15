@@ -13,11 +13,12 @@ import Ticket from '../../../public/asset/images/ticket.png';
 import TicketPlus from '../../../public/asset/images/ticket-plus.png';
 
 export default function Page() {
+    // const router = useRouter();
+    // const searchParams = useSearchParams();
+    // const id = searchParams.get("id");
     const router = useRouter();
-    const searchParams = useSearchParams();
-    const campusId = searchParams.get("id");
-
-    console.log(campusId, 'campusId');
+    const { id } = router.query;
+    console.log(id, 'id');
 
 
     const [formData, setFormData] = useState({
@@ -33,8 +34,8 @@ export default function Page() {
         const fetchData = async () => {
             try {
                 const token = Cookies.get("apiToken");
-                if (!campusId) {
-                    console.error("campusId is null or undefined");
+                if (!id) {
+                    console.error("id is null or undefined");
                     return;
                 }
 
@@ -47,7 +48,7 @@ export default function Page() {
                     }
                 );
                 const dealData = response.data.data;
-                const matchedCampus = dealData.find((campus) => campus._id === campusId);
+                const matchedCampus = dealData.find((campus) => campus._id === id);
                 console.log(matchedCampus, 'matchedCampus=====================');
 
                 // Set form data with matched campus data
@@ -67,7 +68,7 @@ export default function Page() {
         };
 
         fetchData();
-    }, [campusId]);
+    }, [id]);
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -80,7 +81,7 @@ export default function Page() {
         try {
             const token = Cookies.get("apiToken");
             await axios.patch(
-                `https://nightlife.blownclouds.com/api/admin/updateDeal/${campusId}`,
+                `https://nightlife.blownclouds.com/api/admin/updateDeal/${id}`,
                 formData,
                 {
                     headers: {

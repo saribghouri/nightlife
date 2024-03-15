@@ -16,10 +16,11 @@ import TicketPlus from '../../../public/asset/images/ticket-plus.png';
 import Map from "@/components/Map";
 
 export default function Page() {
+    // const router = useRouter();
+    // const searchParams = useSearchParams();
+    // const campusId = searchParams.get("id");
     const router = useRouter();
-    const searchParams = useSearchParams();
-    const campusId = searchParams.get("id");
-
+    const { id } = router.query;
     const [formData, setFormData] = useState({
         concertName: "",
         createdAt: "",
@@ -46,7 +47,7 @@ export default function Page() {
     };
 
     useEffect(() => {
-        if (campusId) {
+        if (id) {
             const fetchData = async () => {
                 try {
                     const token = Cookies.get("apiToken");
@@ -59,7 +60,7 @@ export default function Page() {
                         }
                     );
                     const campuses = response.data.data;
-                    const matchedCampus = campuses.find((campus) => campus._id === campusId);
+                    const matchedCampus = campuses.find((campus) => campus._id === id);
                     if (matchedCampus) {
                         setFormData({
                             concertName: matchedCampus.concertName,
@@ -88,14 +89,14 @@ export default function Page() {
             };
             fetchData();
         }
-    }, [campusId]);
+    }, [id]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const token = Cookies.get("apiToken");
             await axios.patch(
-                `https://nightlife.blownclouds.com/api/admin/updateEvent/${campusId}`,
+                `https://nightlife.blownclouds.com/api/admin/updateEvent/${id}`,
                 formData,
                 {
                     headers: {
