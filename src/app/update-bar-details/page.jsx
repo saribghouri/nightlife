@@ -8,9 +8,9 @@ import Cookies from "js-cookie";
 import InputIcon from '../../../public/asset/images/inputIcon.png';
 import Dollar from '../../../public/asset/images/dollar.png';
 import Address from '../../../public/asset/images/address.png';
-import Clock from '../../../public/asset/images/clock.png';
+
 import QrCode from '../../../public/asset/images/qr-code.png';
-import ImageUpload from '../../../public/asset/images/imageUpload.png';
+
 import Ticket from '../../../public/asset/images/ticket.png';
 import TicketPlus from '../../../public/asset/images/ticket-plus.png';
 import Map from "@/components/Map";

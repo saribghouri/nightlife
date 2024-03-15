@@ -53,7 +53,7 @@ export default function Page() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Perform validation before submitting
+       
         if (validateForm()) {
             try {
                 const token = Cookies.get("apiToken");
