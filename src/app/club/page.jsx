@@ -17,7 +17,7 @@ export default function Page() {
         const fetchData = async () => {
             try {
                 const token = Cookies.get("apiToken");
-                const response = await axios.get("https://nightlife.blownclouds.com/api/user/getClub", {
+                const response = await axios.get("https://nightlife.blownclouds.com/api/admin/getClub", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

@@ -12,13 +12,12 @@ import QrCode from '../../../public/asset/images/qr-code.png';
 import Ticket from '../../../public/asset/images/ticket.png';
 import TicketPlus from '../../../public/asset/images/ticket-plus.png';
 
-export default function Page() {
-    // const router = useRouter();
-    // const searchParams = useSearchParams();
-    // const id = searchParams.get("id");
+const Page = () => {
+
     const router = useRouter();
-    const { id } = router.query;
-    console.log(id, 'id');
+    const searchParams = useSearchParams();
+    const id = searchParams.get("id");
+
 
 
     const [formData, setFormData] = useState({
@@ -223,3 +222,4 @@ export default function Page() {
     );
 }
 
+export default Page

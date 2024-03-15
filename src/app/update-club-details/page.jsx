@@ -12,13 +12,13 @@ import QrCode from '../../../public/asset/images/qr-code.png';
 import Ticket from '../../../public/asset/images/ticket.png';
 import TicketPlus from '../../../public/asset/images/ticket-plus.png';
 import Map from "@/components/Map";
+const Page = () => {
 
-export default function Page() {
-    // const router = useRouter();
-    // const searchParams = useSearchParams();
-    // const id = searchParams.get("id");
     const router = useRouter();
-    const { id } = router.query;
+    const searchParams = useSearchParams();
+    const id = searchParams.get("id");
+    // const router = useRouter();
+    // const { id } = router.query;
     const [formData, setFormData] = useState({
         concertName: "",
         createdAt: "",
@@ -372,3 +372,4 @@ export default function Page() {
         </>
     );
 }
+export default Page

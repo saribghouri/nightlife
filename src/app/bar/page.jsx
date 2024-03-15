@@ -17,7 +17,7 @@ export default function Page() {
             try {
                 const token = Cookies.get("apiToken");
                 console.log(token, 'token');
-                const response = await axios.get("https://nightlife.blownclouds.com/api/user/getBar", {
+                const response = await axios.get("https://nightlife.blownclouds.com/api/admin/getBar", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

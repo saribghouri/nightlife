@@ -16,7 +16,7 @@ export default function Campus() {
         const fetchData = async () => {
             try {
                 const token = Cookies.get("apiToken");
-                const response = await axios.get("https://nightlife.blownclouds.com/api/user/getCampus", {
+                const response = await axios.get("https://nightlife.blownclouds.com/api/admin/getCampus", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
