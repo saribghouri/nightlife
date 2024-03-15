@@ -218,7 +218,6 @@ export default function Page() {
                                         onChange={handleChange}
                                         placeholder="Created At"
                                     />
-                                    {/* <Image className="absolute left-3 top-[22px]" src={Clock} width={14.45} height={14.45} alt="icon" /> */}
                                 </div>
                             </div>
                             <div className="flex mt-4">
