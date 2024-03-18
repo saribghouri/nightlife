@@ -45,13 +45,14 @@ const Page = () => {
         console.log(location, 'location');
     };
 
+
     useEffect(() => {
         if (id) {
             const fetchData = async () => {
                 try {
                     const token = Cookies.get("apiToken");
                     const response = await axios.get(
-                        `https://nightlife.blownclouds.com/api/user/getCampus`,
+                        `https://nightlife.blownclouds.com/api/admin/getCampus`,
                         {
                             headers: {
                                 Authorization: `Bearer ${token}`,
@@ -60,8 +61,16 @@ const Page = () => {
                     );
                     const campuses = response.data.data;
                     const matchedCampus = campuses.find((campus) => campus._id === id);
-
+    
                     if (matchedCampus) {
+                        let typeOfTickets = '';
+                        let entryPrice = '';
+                        
+                        if (matchedCampus.tickets && matchedCampus.tickets.length > 0) {
+                            typeOfTickets = matchedCampus.tickets[0].typeOfTickets || '';
+                            entryPrice = matchedCampus.tickets[0].price || '';
+                        }
+    
                         setFormData({
                             concertName: matchedCampus.concertName,
                             createdAt: matchedCampus.createdAt,
@@ -69,8 +78,8 @@ const Page = () => {
                             picture: matchedCampus.picture,
                             dressCode: matchedCampus.dressCode,
                             noOfVipTables: matchedCampus.noOfVipTables,
-                            typeOfTickets: matchedCampus.tickets[0].typeOfTickets,
-                            entryPrice: matchedCampus.tickets[0].price,
+                            typeOfTickets: typeOfTickets,
+                            entryPrice: entryPrice,
                             atmoshphere: matchedCampus.atmoshphere,
                             music: matchedCampus.music,
                             category: matchedCampus.category,
@@ -90,6 +99,7 @@ const Page = () => {
             fetchData();
         }
     }, [id]);
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -133,6 +143,14 @@ const Page = () => {
         const minutes = String(date.getMinutes()).padStart(2, "0");
         const seconds = String(date.getSeconds()).padStart(2, "0");
         return `${hours}:${minutes}:${seconds}`;
+    };
+
+    const formatDate = (time) => {
+        const date = new Date(time);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        return `${year}-${month}-${day}`;
     };
 
     return (
@@ -206,7 +224,7 @@ const Page = () => {
                                         className="outline-none w-[307.09px] h-[56.52px] text-[12px] border-none px-8 rounded-full bg-white text-black placeholder:text-black"
                                         type="date"
                                         name="time"
-                                        value={formData.time}
+                                        value={formatDate(formData.time)}
                                         onChange={handleChange}
                                         placeholder="Time"
                                     />

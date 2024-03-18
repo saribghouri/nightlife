@@ -399,7 +399,7 @@ export default function Page() {
                                 </div>
                             </div>
                             <div className="flex mt-4">
-                                <div className="relative ml-4">
+                                <div className="relative ">
                                     <input
                                         className="block outline-none  py-2 px-2 w-[307.09px] h-[56.52px] text-sm text-black rounded-full placeholder:text-black placeholder:pl-4  cursor-pointer bg-white"
                                         type="text"

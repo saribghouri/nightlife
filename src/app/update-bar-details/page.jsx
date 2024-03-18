@@ -48,14 +48,14 @@ const Page = () => {
         setEndLocation(location);
         console.log(location, 'location');
     };
-
+    
     useEffect(() => {
         if (id) {
             const fetchData = async () => {
                 try {
                     const token = Cookies.get("apiToken");
                     const response = await axios.get(
-                        `https://nightlife.blownclouds.com/api/user/getBar`,
+                        `https://nightlife.blownclouds.com/api/admin/getBar`,
                         {
                             headers: {
                                 Authorization: `Bearer ${token}`,
@@ -138,6 +138,14 @@ const Page = () => {
         return `${hours}:${minutes}:${seconds}`;
     };
 
+    const formatDate = (time) => {
+        const date = new Date(time);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        return `${year}-${month}-${day}`;
+    };
+
     return (
         <>
             <Layout>
@@ -209,7 +217,7 @@ const Page = () => {
                                         className="outline-none w-[307.09px] h-[56.52px] text-[12px] border-none px-8 rounded-full bg-white text-black placeholder:text-black"
                                         type="date"
                                         name="time"
-                                        value={formData.time}
+                                        value={formatDate(formData.time)}
                                         onChange={handleChange}
                                         placeholder="Time"
                                     />

@@ -21,7 +21,7 @@ export default function Page() {
     const [detailsCount, setDetailsCount] = useState();
     const [userData, setUserData] = useState([]);
     const [userDataCount, setUserDataCount] = useState();
-    console.log(campusCount, 'campusCount');
+    console.log(clubCount, 'campusCount');
 
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function Page() {
             try {
                 const token = Cookies.get("apiToken");
                 console.log(token, 'token');
-                const response = await axios.get("https://nightlife.blownclouds.com/api/user/getCampus", {
+                const response = await axios.get("https://nightlife.blownclouds.com/api/admin/getCampus", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -50,7 +50,7 @@ export default function Page() {
             try {
                 const token = Cookies.get("apiToken");
                 console.log(token, 'token');
-                const response = await axios.get("https://nightlife.blownclouds.com/api/user/getBar", {
+                const response = await axios.get("https://nightlife.blownclouds.com/api/admin/getBar", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -70,7 +70,7 @@ export default function Page() {
             try {
                 const token = Cookies.get("apiToken");
                 console.log(token, 'token');
-                const response = await axios.get("https://nightlife.blownclouds.com/api/user/getClub", {
+                const response = await axios.get("https://nightlife.blownclouds.com/api/admin/getClub", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
