@@ -11,6 +11,7 @@ import Shield from '../../public/asset/images/shield.png'
 import TermsIcon from '../../public/asset/images/termsIcon.png'
 import Privacy from '../../public/asset/images/privacy.png'
 import Support from '../../public/asset/images/support.png'
+import Notification from '../../public/asset/images/notification.png'
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
@@ -216,6 +217,20 @@ const Layout = ({ children }) => {
                                     <span className="ml-2">Support</span>
                                 </button>
                             </li>
+                            <li className="mb-[16px]">
+                                <button
+                                    className="flex items-center text-white hover:text-gray-300 focus:outline-none"
+                                    onClick={() => router.push("/notification")}
+                                >
+                                    <Image
+                                        src={Notification}
+                                        width={24}
+                                        height={24}
+                                        alt="Booking Icon"
+                                    />
+                                    <span className="ml-2">Notification</span>
+                                </button>
+                            </li>
                         </ul>
                     </nav>
                     <div className="mt-8 cursor-pointer " >
@@ -369,6 +384,19 @@ const Layout = ({ children }) => {
                                     >
                                         <Image
                                             src={Support}
+                                            width={24}
+                                            height={24}
+                                            alt="Booking Icon"
+                                        />
+                                    </button>
+                                </li>
+                                <li className="mb-[16px]">
+                                    <button
+                                        className="flex items-center text-white hover:text-gray-300 focus:outline-none"
+                                        onClick={() => router.push("/notification")}
+                                    >
+                                        <Image
+                                            src={Notification}
                                             width={24}
                                             height={24}
                                             alt="Booking Icon"
