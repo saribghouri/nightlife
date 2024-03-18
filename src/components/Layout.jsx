@@ -10,6 +10,7 @@ import VipTable from '../../public/asset/images/vipTable.png'
 import Shield from '../../public/asset/images/shield.png'
 import TermsIcon from '../../public/asset/images/termsIcon.png'
 import Privacy from '../../public/asset/images/privacy.png'
+import Support from '../../public/asset/images/support.png'
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
@@ -60,7 +61,7 @@ const Layout = ({ children }) => {
             {/* Sidebar */}
             <div className={`fixed inset-y-0 left-0 w-64 layOutBackGround text-white z-50 transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <div className="p-4 ">
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center justify-between ">
                         <Image src="/asset/images/logo.png" width={160} height={160} alt="Logo" />
                         <button
                             className="lg:hidden focus:outline-none"
@@ -89,7 +90,7 @@ const Layout = ({ children }) => {
                                     <span className="ml-2">Dashboard</span>
                                 </button>
                             </li>
-                            <li className="mb-[16px]">
+                            {/* <li className="mb-[16px]">
                                 <button
                                     className="flex items-center text-white hover:text-gray-300 focus:outline-none"
                                     onClick={() => router.push("/verified-host")}
@@ -102,7 +103,7 @@ const Layout = ({ children }) => {
                                     />
                                     <span className="ml-2">Verified Host</span>
                                 </button>
-                            </li>
+                            </li> */}
                             <li className="mb-[16px]">
                                 <button
                                     className="flex items-center text-white hover:text-gray-300 focus:outline-none"
@@ -207,7 +208,7 @@ const Layout = ({ children }) => {
                                     onClick={() => router.push("/get-support-queries")}
                                 >
                                     <Image
-                                        src={Privacy}
+                                        src={Support}
                                         width={24}
                                         height={24}
                                         alt="Booking Icon"
@@ -244,7 +245,7 @@ const Layout = ({ children }) => {
                                         <Image src={Fire} width={24} height={24} alt="logo" />
                                     </button>
                                 </li>
-                                <li className="mb-[16px] pt-6">
+                                <li className="mb-[16px] ">
                                     <button
                                         className="flex items-center text-white hover:text-gray-300 focus:outline-none"
                                         onClick={() => router.push("/dashboard")}
@@ -257,7 +258,7 @@ const Layout = ({ children }) => {
                                         />
                                     </button>
                                 </li>
-                                <li className="mb-[16px]">
+                                {/* <li className="mb-[16px]">
                                     <button
                                         className="flex items-center text-white hover:text-gray-300 focus:outline-none"
                                         onClick={() => router.push("/verified-host")}
@@ -269,7 +270,7 @@ const Layout = ({ children }) => {
                                             alt="Verified Host Icon"
                                         />
                                     </button>
-                                </li>
+                                </li> */}
                                 <li className="mb-[16px]">
                                     <button
                                         className="flex items-center text-white hover:text-gray-300 focus:outline-none"
@@ -367,7 +368,7 @@ const Layout = ({ children }) => {
                                         onClick={() => router.push("/get-support-queries")}
                                     >
                                         <Image
-                                            src={Privacy}
+                                            src={Support}
                                             width={24}
                                             height={24}
                                             alt="Booking Icon"
