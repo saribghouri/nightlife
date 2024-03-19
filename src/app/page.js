@@ -59,10 +59,11 @@ function LoginForm() {
   };
 
   return (
-    <div className="backGroundImage min-h-screen max-h-full">
+    <div className=" min-h-screen relative !w-[100%] max-h-full">
+      <img className="absolute min-h-screen object-cover inset-0 w-full h-screen" src='/asset/images/loginBackgroundImage.png' alt="image"/>
       {/* <ToastContainer /> */}
-      <form className="flex flex-col justify-center items-center" onSubmit={handleSubmit}>
-        <Image src={Logo} width={'358.99px'} height={'353.81px'} alt="logo" />
+      <form className="flex flex-col inset-0 absolute w-full  justify-center items-center" onSubmit={handleSubmit}>
+        <Image src={Logo} width={220} height={220} alt="logo" />
         <p className="text-[17.50px] text-white">Login to your Account </p>
         <input
           className="border w-[314.86px] h-[43.98px] outline-none py-2 px-4 rounded-full mt-4 text-[10px] bg-white text-black placeholder-gray-500"
