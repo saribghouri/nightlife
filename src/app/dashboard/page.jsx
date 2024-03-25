@@ -153,9 +153,10 @@ export default function Page() {
     return (
         <>
             <Layout>
-                <div className="pl-4 pt-10">
+               <div className="h-[121vh] lg:h-full">
+               <div className="pl-4 pt-10">
                     <h1 className="text-[31.44px] heading font-bold">Main Event Category</h1>
-                    <div className="lineColor 2xl:w-[40%]  p-[2px]">
+                    <div className="lineColor 2xl:w-[40%]  w-[90%] p-[2px]">
 
                     </div>
                 </div>
@@ -249,6 +250,7 @@ export default function Page() {
                         })
                     }
                 </div>
+               </div>
             </Layout>
         </>
     );
